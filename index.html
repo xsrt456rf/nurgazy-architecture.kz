@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="ru">Диас Нургазы — Архитектор — Портфолио</title>
+  <title data-lang="en" style="display:none">Dias Nurgazy — Architect — Portfolio</title>
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #222;
+      --accent: #b22222;
+      --muted: #777;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    header {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeDown 0.8s ease-out;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .lang-switch {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 600;
+      margin-left: 15px;
+      transition: opacity 0.3s ease;
+    }
+    .lang-switch:hover {
+      opacity: 0.7;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .project:hover img {
+      transform: scale(1.05);
+    }
+    .project h3 {
+      margin: 15px;
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+      animation: fadeUp 1s ease-out;
+    }
+
+    /* --- Анимации --- */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D</div>
+    <nav>
+      <a href="#about" data-lang="ru">Обо мне</a>
+      <a href="#about" data-lang="en" style="display:none">About</a>
+      <a href="#projects" data-lang="ru">Проекты</a>
+      <a href="#projects" data-lang="en" style="display:none">Projects</a>
+      <a href="#contact" data-lang="ru">Контакты</a>
+      <a href="#contact" data-lang="en" style="display:none">Contact</a>
+      <span class="lang-switch" onclick="switchLang()">EN / RU</span>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1 data-lang="ru">Архитектор Диас Нургазы</h1>
+    <h1 data-lang="en" style="display:none">Architect Dias Nurgazy</h1>
+    <p data-lang="ru" style="text-align:center;max-width:700px;margin:auto;">
+      Я архитектор из Казахстана, специализируюсь на современных и функциональных решениях в архитектуре. 
+      Моя цель — создавать эстетичные, практичные и вдохновляющие пространства, отражающие индивидуальность заказчика.
+    </p>
+    <p data-lang="en" style="display:none;text-align:center;max-width:700px;margin:auto;">
+      I am an architect from Kazakhstan, specializing in modern and functional architectural solutions.
+      My goal is to create aesthetic, practical, and inspiring spaces that reflect the client's individuality.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 data-lang="ru">Проекты</h2>
+    <h2 data-lang="en" style="display:none">Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop" alt="Проект 1">
+        <h3 data-lang="ru">Проект 1 — Современный фасад</h3>
+        <h3 data-lang="en" style="display:none">Project 1 — Modern Facade</h3>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop" alt="Проект 2">
+        <h3 data-lang="ru">Проект 2 — Минимализм</h3>
+        <h3 data-lang="en" style="display:none">Project 2 — Minimalism</h3>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Проект 3 — Интерьер">
+        <h3 data-lang="ru">Проект 3 — Интерьер</h3>
+        <h3 data-lang="en" style="display:none">Project 3 — Interior</h3>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop" alt="Проект 4">
+        <h3 data-lang="ru">Проект 4 — Эко-дом</h3>
+        <h3 data-lang="en" style="display:none">Project 4 — Eco House</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-lang="ru">Контакты</h2>
+    <h2 data-lang="en" style="display:none">Contact</h2>
+    <p data-lang="ru" style="text-align:center;">
+      Instagram: <a href="https://www.instagram.com/d1as_n" target="_blank">@d1as_n</a><br>
+      Тел: +7 700 000 0000<br>
+      Город: Астана, Казахстан
+    </p>
+    <p data-lang="en" style="text-align:center;display:none;">
+      Instagram: <a href="https://www.instagram.com/d1as_n" target="_blank">@d1as_n</a><br>
+      Phone: +7 700 000 0000<br>
+      City: Astana, Kazakhstan
+    </p>
+  </section>
+
+  <footer>
+    <p data-lang="ru">© 2025 Диас Нургазы — Архитектор</p>
+    <p data-lang="en" style="display:none">© 2025 Dias Nurgazy — Architect</p>
+  </footer>
+
+  <script>
+    // Переключение языков
+    function switchLang() {
+      const ru = document.querySelectorAll('[data-lang="ru"]');
+      const en = document.querySelectorAll('[data-lang="en"]');
+      ru.forEach(el => el.style.display = (el.style.display === "none" ? "" : "none"));
+      en.forEach(el => el.style.display = (el.style.display === "none" ? "" : "none"));
+    }
+
+    // Анимация при прокрутке
+    const sections = document.querySelectorAll("section");
+    const showSection = () => {
+      const trigger = window.innerHeight * 0.8;
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect().top;
+        if (rect < trigger) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", showSection);
+    showSection();
+  </script>
+</body>
+</html>
